@@ -17,7 +17,7 @@ import random # Import the random module to our code.
 
 # DECLARATIONS
 secretNumber = -1
-playerGuess = int(-1)
+playerGuess = -1
 playerScore = 0
 cpuScore = 0
 numberGuesses = 0
@@ -75,7 +75,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
 
     for guesses in range(numAttempts):
         print(f"You have {5 - numberGuesses} guesses remaining.\n")
-        playerGuess = input("Type a number from 0 to 20 and press ENTER.\n")
+        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
         
         # input() saves all data as a string by default.
         # int() will convert to an INTEGER
@@ -87,7 +87,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
             break # IMMEDIATELY EXIT ANY LOOP YOU ARE IN!
         else:
             print("You did not guess correctly.\n")
-            if int(playerGuess) > secretNumber:
+            if playerGuess > secretNumber:
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low.\n")
