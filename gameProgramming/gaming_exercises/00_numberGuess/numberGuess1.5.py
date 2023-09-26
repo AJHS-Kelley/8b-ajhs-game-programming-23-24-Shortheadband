@@ -17,7 +17,7 @@ import random # Import the random module to our code.
 
 # DECLARATIONS
 secretNumber = -1
-playerGuess = -1
+playerGuess = int(-1)
 playerScore = 0
 cpuScore = 0
 numberGuesses = 0
@@ -37,15 +37,15 @@ isCorrect = input("Please type yes if correct, no if not correct.\n")
 if isCorrect == "yes":
     print(f"Ok {playerName}, let's continue")
 
-rangeMin = input("Now let's set your difficulty.\n Please type the minuium range NUMBER and press enter.\n")
+rangeMin = int(input("Now let's set your difficulty.\n Please type the minuium range NUMBER and press enter.\n"))
 if rangeMin == rangeMin:
     print(f"Ok {playerName}, let's continue")
 
-rangeMax = input("Now Type the maxium range NUMBER and press enter.\n")
+rangeMax = int(input("Now Type the maxium range NUMBER and press enter.\n"))
 if rangeMax == rangeMax:
     print(f"Ok {playerName}, let's continue")
 
-numAttempts = input("Now type the NUMBER of attempts and press enter")
+numAttempts = int(input("Now type the NUMBER of attempts and press enter.\n"))
 if numAttempts == numAttempts:
     print(f"Ok {playerName}, let's continue")
 
@@ -53,9 +53,6 @@ isDifficultyCorrect = input("Please type yes if correct, no if not correct.\n")
 if isDifficultyCorrect == "yes":
     print(f"Ok {playerName}, let's continue")
 
-# CPU SECRET NUMBER GENERATION
-secretNumber = random.randint(rangeMin, rangeMax)
-# print(secretNumber)
 
 # GAME LOOP
 print("You need to guess a number from 0 to 20 and you have four guesses.\nIf you guess it right and you get a point.\nIf you guess wrong 5 times cpu gets a point")
@@ -76,7 +73,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
 
 
 
-    for guesses in range(6):
+    for guesses in range(numAttempts):
         print(f"You have {5 - numberGuesses} guesses remaining.\n")
         playerGuess = input("Type a number from 0 to 20 and press ENTER.\n")
         
@@ -90,7 +87,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
             break # IMMEDIATELY EXIT ANY LOOP YOU ARE IN!
         else:
             print("You did not guess correctly.\n")
-            if playerGuess > secretNumber:
+            if int(playerGuess) > secretNumber:
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low.\n")
