@@ -1,3 +1,8 @@
+# The code "MAY NEED TO BE RAN TWICE BEFORE STARTING CORRECTLY" needs to be started twice
+
+
+
+
 # Select the secret number from a given range.
 # Player must guess the number.
 # Compare guess to the secret number
@@ -87,7 +92,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
             break # IMMEDIATELY EXIT ANY LOOP YOU ARE IN!
         else:
             print("You did not guess correctly.\n")
-            if playerGuess < secretNumber:
+            if playerGuess > secretNumber:
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low.\n")
