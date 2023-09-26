@@ -74,7 +74,7 @@ while playerScore != 3 and cpuScore != 3: # Start the match
 
 
     for guesses in range(numAttempts):
-        print(f"You have {5 - numberGuesses} guesses remaining.\n")
+        print(f"You have {int(numAttempts) - numberGuesses} guesses remaining.\n")
         playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
         
         # input() saves all data as a string by default.
@@ -82,18 +82,18 @@ while playerScore != 3 and cpuScore != 3: # Start the match
         # folat() will covert to a float
         print(f"You have chosen {playerGuess}. Let's see if you're right!\n")
         if playerGuess == secretNumber:
-            print("Whoa dude, what a guess! You got in!\n")
             playerScore += 1
+            print("Whoa dude, what a guess! You got in!\n")
             break # IMMEDIATELY EXIT ANY LOOP YOU ARE IN!
         else:
             print("You did not guess correctly.\n")
-            if playerGuess > secretNumber:
+            if playerGuess < secretNumber:
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low.\n")
         numberGuesses += 1
     if playerGuess != secretNumber:
-        cpuScore != 1
+        cpuScore += 1
         print("The Cpu wins a point since you ran out of guessess.\n")
 
 if playerScore >= 3:
