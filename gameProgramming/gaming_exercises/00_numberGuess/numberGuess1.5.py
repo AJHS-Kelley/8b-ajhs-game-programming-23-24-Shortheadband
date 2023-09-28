@@ -31,7 +31,7 @@ difficulty = ""
 rangeMin = ""
 rangeMax = ""
 numAttempts = ""
-range,
+# range,
 
 print('"Guess The Number"')
 
