@@ -10,7 +10,18 @@ testScores = [95,100,25,15,27,35]
 classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 
 # Printing Contents of an Lists
-print(breakfastfoods)
-print(testScores)
-print(classGPA)
+#print(breakfastfoods)
+#print(testScores)
+#print(classGPA)
+
+# Accessing Specfic List Elements -- REMEMBER FIRST ELEMENT IS INDEX 0
+#print(breakfastfoods[0])
+#print(testScores[0])
+#print(classGPA[0])
+
+# Accessing Last Element in Lists
+#print(breakfastfoods[-1])
+#print(testScores[-1])
+#print(classGPA[-1])
+
 
