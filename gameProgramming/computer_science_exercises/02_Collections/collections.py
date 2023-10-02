@@ -98,5 +98,12 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 #classGPA.remove(2.25)
 #print(classGPA)
 
+# Determining List Length
+print(f"There are {len(breakfastfoods)} items in the breakfastfoods list.")
+print(f"There are {len(testScores)} items in the testScores list.")
+print(f"There are {len(classGPA)} items in the classGPA list.")
+
+
+
 
 
