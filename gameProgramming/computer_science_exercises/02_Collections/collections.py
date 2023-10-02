@@ -1,4 +1,4 @@
-#Collections Examples, Ryan Kelley, v0.2a
+#Collections Examples, Ryan Kelley, v0.2c
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS CUPLICATE VALUES
 breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
@@ -66,10 +66,37 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 #print(classGPA)
 
 # Pause -- WYOC -- .apprnd() another item to each list. .insert() an item at index 5 to each list.
-breakfastfoods.append("Honey Bun")
-print(breakfastfoods)
-testScores.append(100)
-print(testScores)
-classGPA.append(4.0)
-print(classGPA)
+#breakfastfoods.append("Honey Bun")
+#print(breakfastfoods)
+#testScores.append(100)
+#print(testScores)
+#classGPA.append(4.0)
+#print(classGPA)
+
+# Deleting Items from a List
+# Use .romove() to remove a specfic item from the list.
+#breakfastfoods.remove("Waffles")
+#print(breakfastfoods)
+#testScores.remove(100)
+#print(testScores)
+#classGPA.remove(2.25)
+#print(classGPA)
+
+# To delete using the index value we use .pop()
+#breakfastfoods.pop(4)
+#print(breakfastfoods)
+#testScores.pop(4)
+#print(testScores)
+#classGPA.pop(4)
+#print(classGPA)
+
+# PAUSE - WYOC -- .pop() the 2nd element from each list.
+#breakfastfoods.remove("Bacon")
+#print(breakfastfoods)
+#testScores.remove(100)
+#print(testScores)
+#classGPA.remove(2.25)
+#print(classGPA)
+
+
 
