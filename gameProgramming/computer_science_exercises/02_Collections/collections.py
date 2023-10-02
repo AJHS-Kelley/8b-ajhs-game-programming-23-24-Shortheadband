@@ -68,8 +68,8 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 # Pause -- WYOC -- .apprnd() another item to each list. .insert() an item at index 5 to each list.
 breakfastfoods.append("Honey Bun")
 print(breakfastfoods)
-testScores.append(99)
+testScores.append(100)
 print(testScores)
-classGPA.append(1.99)
+classGPA.append(4.0)
 print(classGPA)
 
