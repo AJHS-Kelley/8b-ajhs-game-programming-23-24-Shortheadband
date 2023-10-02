@@ -1,4 +1,4 @@
-#Collections Examples, Ryan Kelley, v0.0
+#Collections Examples, Ryan Kelley, v0.2a
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS CUPLICATE VALUES
 breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
@@ -29,5 +29,21 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 #print(testScores[2])
 #print(classGPA[2])
 
+# Changing Items in a List
+#breakfastfoods[0] = "Sausage"
+#testScores[0] = 97
+#classGPA[0] = 3.57
+#print(breakfastfoods[0])
+#print(testScores[0])
+#print(classGPA[0])
+#print(breakfastfoods)
+#print(testScores)
+#print(classGPA)
 
-
+# Pause -- WYOC -- Change 5th Element
+breakfastfoods[4] = "Bagel"
+testScores[4] = 45
+classGPA[4] = 2.45
+print(breakfastfoods)
+print(testScores)
+print(classGPA)
