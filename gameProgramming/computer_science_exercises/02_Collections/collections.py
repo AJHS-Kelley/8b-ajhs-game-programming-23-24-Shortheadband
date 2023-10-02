@@ -99,11 +99,11 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 #print(classGPA)
 
 # Determining List Length
-print(f"There are {len(breakfastfoods)} items in the breakfastfoods list.")
-print(f"There are {len(testScores)} items in the testScores list.")
-print(f"There are {len(classGPA)} items in the classGPA list.")
+#print(f"There are {len(breakfastfoods)} items in the breakfastfoods list.")
+#print(f"There are {len(testScores)} items in the testScores list.")
+#print(f"There are {len(classGPA)} items in the classGPA list.")
 
-
-
-
-
+# List Methods -- Functions for working with lists.
+# Sorting Lists -- Alphanumerical -- Ascending -- Capital Letters before Lower Case Letters
+breakfastfoods.sort()
+print(f"The Sorted breakfastfoods list is {breakfastfoods}.")
