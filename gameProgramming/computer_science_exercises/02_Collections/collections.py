@@ -1,4 +1,4 @@
-#Collections Examples, Ryan Kelley, v0.4a
+#Collections Examples, Ryan Kelley, v0.4c
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS CUPLICATE VALUES
 #breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
@@ -120,13 +120,22 @@ testScores = [95,100,25,15,27,35,100]
 classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25, 1.74]
 
 # .count() will return the number of times a value appears in a list.
-numWaffles = breakfastfoods.count("Waffles")
-print(f"There are {numWaffles} waffles in the list.")
-numBacon = breakfastfoods.count("Bacon")
-print(f"There are {numBacon} Bacon in the list.")
+#numWaffles = breakfastfoods.count("Waffles")
+#print(f"There are {numWaffles} waffles in the list.")
+#numBacon = breakfastfoods.count("Bacon")
+#print(f"There are {numBacon} Bacon in the list.")
 # Pause -- WYOC -- use .count() to count for a single item in the list and any multiple items. Use testScores and classGPA
 
-numScores = testScores.count(100)
-print(f"There are {numScores} students with a score of 100 in the list.")
-numGPA = classGPA.count(1.74)
-print(f"There are {numGPA} students with a GPA of 1.74 in the list.")
+#numScores = testScores.count(100)
+#print(f"There are {numScores} students with a score of 100 in the list.")
+#numGPA = classGPA.count(1.74)
+#print(f"There are {numGPA} students with a GPA of 1.74 in the list.")
+
+# Deleting All Contents of a list -- .clear()
+#breakfastfoods.clear
+#print(f" The breakfastfoods list is {breakfastfoods}.")
+#testScores.clear
+#print(f"The testScores list is {testScores}.")
+#classGPA.clear()
+#print(f" The classGPA list is {classGPA}.")
+
