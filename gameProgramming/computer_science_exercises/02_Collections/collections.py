@@ -1,13 +1,13 @@
 #Collections Examples, Ryan Kelley, v0.4a
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS CUPLICATE VALUES
-breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
+#breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
 # Each item on the list known as an ELEMENT.
 # The position in the list for each is the INDEX
 # The element "BACON" is at index 0.
 # Python Only: index -1 it is the last item on the list
-testScores = [95,100,25,15,27,35]
-classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
+#testScores = [95,100,25,15,27,35]
+#classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 
 # Printing Contents of an Lists
 #print(breakfastfoods)
@@ -105,12 +105,28 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 
 # List Methods -- Functions for working with lists.
 # Sorting Lists -- Alphanumerical -- Ascending -- Capital Letters before Lower Case Letters
-print(f"The original breakfastFoods list is {breakfastfoods}")
-breakfastfoods.sort()
-print(f"The Sorted breakfastfoods list is {breakfastfoods}.")
-print(f"The original testScores list is {testScores}")
-testScores.sort()
-print(f"The Sorted testScores list is {testScores}.")
-print(f"The original classGPA list is {classGPA}")
-classGPA.sort()
-print(f"The Sorted testScores list is {classGPA}.")
+#print(f"The original breakfastFoods list is {breakfastfoods}")
+#breakfastfoods.sort()
+#print(f"The Sorted breakfastfoods list is {breakfastfoods}.")
+#print(f"The original testScores list is {testScores}")
+#testScores.sort()
+#print(f"The Sorted testScores list is {testScores}.")
+#print(f"The original classGPA list is {classGPA}")
+#classGPA.sort()
+#print(f"The Sorted testScores list is {classGPA}.")
+
+breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk", "Bacon"]
+testScores = [95,100,25,15,27,35,100]
+classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25, 1.74]
+
+# .count() will return the number of times a value appears in a list.
+numWaffles = breakfastfoods.count("Waffles")
+print(f"There are {numWaffles} waffles in the list.")
+numBacon = breakfastfoods.count("Bacon")
+print(f"There are {numBacon} Bacon in the list.")
+# Pause -- WYOC -- use .count() to count for a single item in the list and any multiple items. Use testScores and classGPA
+
+numScores = testScores.count(100)
+print(f"There are {numScores} students with a score of 100 in the list.")
+numGPA = classGPA.count(1.74)
+print(f"There are {numGPA} students with a GPA of 1.74 in the list.")
