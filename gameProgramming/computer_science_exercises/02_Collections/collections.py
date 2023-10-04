@@ -1,4 +1,4 @@
-#Collections Examples, Ryan Kelley, v0.2c
+#Collections Examples, Ryan Kelley, v0.4a
 
 # LIST -- ORDERED, CHANGEABLE, ALLOWS CUPLICATE VALUES
 breakfastfoods = ["Bacon","Waffles","Pancakes", "Cereal", "Milk"]
@@ -105,5 +105,12 @@ classGPA = [3.14, 2.25, 1.74, 1.99, 0.99, 4.25]
 
 # List Methods -- Functions for working with lists.
 # Sorting Lists -- Alphanumerical -- Ascending -- Capital Letters before Lower Case Letters
+print(f"The original breakfastFoods list is {breakfastfoods}")
 breakfastfoods.sort()
 print(f"The Sorted breakfastfoods list is {breakfastfoods}.")
+print(f"The original testScores list is {testScores}")
+testScores.sort()
+print(f"The Sorted testScores list is {testScores}.")
+print(f"The original classGPA list is {classGPA}")
+classGPA.sort()
+print(f"The Sorted testScores list is {classGPA}.")
