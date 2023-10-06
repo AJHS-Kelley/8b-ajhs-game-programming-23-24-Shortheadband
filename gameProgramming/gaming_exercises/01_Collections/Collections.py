@@ -1,4 +1,4 @@
-#Collections GA v0.2
+#Collections GA v0.3
 
 # Adding items
 
@@ -30,3 +30,15 @@
 
 #layerInventory.sort()
 #print(f"The player's inventory is {playerInventory}.")
+
+# Fixed Inventory #
+#print("Allow me to inspect your weapons.\n")
+
+#weaponlist = ["sword", "daggers", "bow", "crossbow", "guantlets"]
+#Weapons = len(weaponlist)
+
+#for i in range(Weapons):
+    #print(weaponlist[i])
+
+#print(f"\nThis is but a shame,\n the level of your weapons still has more growing to do before I can add anything of value.")
+
