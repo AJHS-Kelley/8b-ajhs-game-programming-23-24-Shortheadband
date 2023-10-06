@@ -42,3 +42,37 @@
 
 #print(f"\nThis is but a shame,\n the level of your weapons still has more growing to do before I can add anything of value.")
 
+#Item Exists in Inventory
+
+doorKeys = ["violet"," red", "yellow","brown","blue"]
+doors = ["red door", "blue door", "brown door", "yellow door", "violet door"]
+
+#Key distrubution
+doorNumber = 0
+if doorNumber <= 1:
+    doorKeys.insert(doorNumber,doorKeys[0])
+    doors.insert(doorNumber,doors[0])
+    doorNumber = doorNumber + 1
+elif doorNumber <= 2:
+    doorKeys.insert(doorNumber,doorKeys[1])
+    doors.insert(doorNumber,doors[1])
+    doorNumber = doorNumber + 1
+elif doorNumber <= 3:
+    doorKeys.insert(doorNumber,doorKeys[2])
+    doors.insert(doorNumber,doors[2])
+    doorNumber = doorNumber + 1
+elif doorNumber <= 4:
+    doorKeys.insert(doorNumber,doorKeys[3])
+    doors.insert(doorNumber,doors[3])
+    doorNumber = doorNumber + 1
+elif doorNumber <= 5:
+    doorKeys.insert(doorNumber,doorKeys[4])
+    doors.insert(doorNumber,doors[4])
+    doorNumber = doorNumber + 1
+
+# Door Selector
+import random
+Door = random.randint(doors[0],doors[4])
+
+print(f"so you've trapped yourself in a dunegeon let's see how you can get out of here.\n The {Door} appears before you.")
+
