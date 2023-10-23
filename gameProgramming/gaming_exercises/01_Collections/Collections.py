@@ -1,4 +1,4 @@
-#Collections GA v0.3
+#Collections GA v0.4
 
 # Adding items
 
@@ -42,37 +42,58 @@
 
 #print(f"\nThis is but a shame,\n the level of your weapons still has more growing to do before I can add anything of value.")
 
+#weaponList = [
+    
+    #True, # Gun
+    #True, # Knife
+    #False, # Ultra Gun
+    #False, # Mighty Knife
+    #]
+    
+#weaponNum = 0
+#while weaponNum < len(weaponList):
+    #if weaponNum == 0 and weaponList[0] == True:
+           #print("you are wielding a Gun.\n")
+    #if weaponNum == 1 and weaponList[1] == True:
+            #print("you are wielding a Knife.\n")
+    #if weaponNum == 2 and weaponList[2] == True:
+            #print("you are wielding a Ultra Gun.\n")
+    #if weaponNum == 3 and weaponList[3] == True:
+            #print("you are wielding a Mighty Knife.\n")
+    #weaponNum += 1    
+
 #Item Exists in Inventory
 
-doorKeys = ["violet"," red", "yellow","brown","blue"]
-doors = ["red door", "blue door", "brown door", "yellow door", "violet door"]
+#doorkeys = [
+   # "red",
+   # "green",
+   # "yellow",
+   # "purple",
+   # "brown",
 
-#Key distrubution
-doorNumber = 0
-if doorNumber <= 1:
-    doorKeys.insert(doorNumber,doorKeys[0])
-    doors.insert(doorNumber,doors[0])
-    doorNumber = doorNumber + 1
-elif doorNumber <= 2:
-    doorKeys.insert(doorNumber,doorKeys[1])
-    doors.insert(doorNumber,doors[1])
-    doorNumber = doorNumber + 1
-elif doorNumber <= 3:
-    doorKeys.insert(doorNumber,doorKeys[2])
-    doors.insert(doorNumber,doors[2])
-    doorNumber = doorNumber + 1
-elif doorNumber <= 4:
-    doorKeys.insert(doorNumber,doorKeys[3])
-    doors.insert(doorNumber,doors[3])
-    doorNumber = doorNumber + 1
-elif doorNumber <= 5:
-    doorKeys.insert(doorNumber,doorKeys[4])
-    doors.insert(doorNumber,doors[4])
-    doorNumber = doorNumber + 1
+#  ]
 
-# Door Selector
-import random
-Door = random.randint(doors[0],doors[4])
+# key = input("which color key doy need to unlock the door?\n")
 
-print(f"so you've trapped yourself in a dunegeon let's see how you can get out of here.\n The {Door} appears before you.")
+# if key in doorkeys:
+ #   print("you have the correct key! The door unlocks.\n")
+# else:
+ #   print("you do not have that key. The door remains locked")
 
+#Random Enemy Genrator
+
+enemyBase = ["demon","slime","skeletion","goblin","Ork"]
+enemyType = ["Necromancer","Mage","Scout","Archer","Crusader"]
+enemyPrefix = ["Elite","Tainted","enlightened","Super Elite","Alpha","Rookie"]
+
+import random 
+
+reb = random.randint(0,len(enemyBase))
+ret = random.randint(0,len(enemyType))
+rep = random.randint(0,len(enemyPrefix))
+enemy = (print(reb),print(ret),print(rep))
+i = 0
+while i <= 15:
+
+    print(f"A {enemy} is approaching")
+i + (i + 1)
