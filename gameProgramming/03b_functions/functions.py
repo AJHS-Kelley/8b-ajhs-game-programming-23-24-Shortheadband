@@ -17,3 +17,15 @@ def exampleFunctionB(num, count): # PARAMETERS
 # RUNNING A FUNCTION IS KNOWN AS CALLING THE FUNCTION!
 #exampleFunctionA()
 #exampleFunctionB(5,0)
+
+def rollDice(numDice, sizeDice:)
+    numRolled = 0
+    while numRolled < numDice
+            roll = random.radint(1, sizeDice)
+               
+               
+
+
+
+
+
