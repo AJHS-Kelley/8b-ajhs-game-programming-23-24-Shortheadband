@@ -1,4 +1,4 @@
-# Hangman Game by Gabriel Coffey, vo.3
+# Hangman Game by Gabriel Coffey, v0.3
 import random
 
 words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
@@ -85,6 +85,10 @@ def getGuess(alreadyGuessed):
             print('Please guess a LETTER from the English alphabet.')
         else:
             return guess
+            
+    def playAgain()
+        print('Do you want to play again? Yes or No?')
+        return input().lower().startswith('y') 
 
 #i = 0
 #while i < 50:
