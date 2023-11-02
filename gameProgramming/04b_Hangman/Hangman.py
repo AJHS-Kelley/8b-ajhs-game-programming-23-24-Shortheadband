@@ -1,4 +1,4 @@
-# Hangman Game by Gabriel Coffey, vo.2
+# Hangman Game by Gabriel Coffey, vo.3
 import random
 
 words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
@@ -71,6 +71,20 @@ def displayBoard(missedLetters, correctLetters , secretWord):
         print(letter, end = '')
     print()    
 
+
+def getGuess(alreadyGuessed):
+    while True:
+        print('Please guess a letter amd press enter.')
+        guess = input()
+        guess = guess.lower()
+        if len(guess) != 1:
+            print('Please enter a single letter.')
+        elif guess in alreadyGuessed:
+            print('Letter has been guessed already, try again.')
+        elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+            print('Please guess a LETTER from the English alphabet.')
+        else:
+            return guess
 
 #i = 0
 #while i < 50:
