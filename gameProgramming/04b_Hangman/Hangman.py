@@ -1,4 +1,4 @@
-# Hangman Game by Gabriel Coffey, v0.3
+# Hangman Game by Gabriel Coffey, v0.4
 import random
 
 words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
@@ -86,9 +86,55 @@ def getGuess(alreadyGuessed):
         else:
             return guess
             
-    def playAgain()
+    def playAgain():
         print('Do you want to play again? Yes or No?')
-        return input().lower().startswith('y') 
+        return input().lower().startswith('y')
+        
+    # Introduce the game
+    print('Welcome to Hangman by Ryan K.')
+    missedLetters = ''
+    correctLetters = ''
+    secretWord = getRandomWord(words)
+    gameIsDone = false
+    
+    # Main Game Loop
+    while True:
+        displayBoard(missedLetters, correctLetters, secretWord)
+        
+        guess = getGuess(missedLetters + correctLetters)
+        
+        if guess in secretWord:
+            correctLetters = correctLetters + guess
+            
+            # Check To See If Winner, Winner Chicken Dinner
+            foundAllLetters = True
+            for i in range(len(secretWord)):
+                if secretWord[i] not in correctLetters:
+                    foundAllLetters = false
+                    break
+                if foundAllLetters:
+                    print('That is pretty based! well Done.')
+                    print('The secret word was' + secretWord)
+                    gameIsDone = True
+        else:
+            missedLetters = missedLetters + guess
+            
+            if len(missedLetters) == len(HANGMAN_BOARD) - 1:
+                displayBoard(missedLetters, correctLetters, secretWord)
+                print('You have run out of huesses and lost the game.')
+                print('you made this number of correct guesses' + str(len(correctLetters)))
+                print('The secret word was ' + secretWord)
+                gameIsDone = True
+                
+        if gameIsDone:
+            if playAgain():
+                missedLetters = ''
+                correctLetters = ''
+                gameIsDone = False
+                secretWord = getRandomWord(words)
+            else:
+                break
+                
 
 #i = 0
 #while i < 50:
