@@ -1,4 +1,4 @@
-# Hangman Game by Gabriel Coffey, v0.5
+# Hangman Game by Gabriel Coffey, v0.6
 import random
 
 #words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
@@ -54,10 +54,17 @@ HANGMAN_BOARD = ['''
 #    i += 1
 
 # Pick Word from List
-def getRandomWord(wordList): # Return a random word from the list
-    wordIndex = random.randint(0,len(words) - 1)
-    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
-    return wordList[wordIndex]
+#def getRandomWord(wordList): # Return a random word from the list
+#    wordIndex = random.randint(0,len(words) - 1)
+#    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS
+#    return wordList[wordIndex]
+
+# Pcik word from Dictionary    
+def getRandomWord(wordDict): # Return a random word from the list
+    wordKey = random.choice(list(wordDict.keys()))
+    wordIndex = random.randiant(0,len(wordDict[wordKey] - 1))
+    return wordDict[wordIndex]
+    
 
 def displayBoard(missedLetters, correctLetters , secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
@@ -97,15 +104,31 @@ def getGuess(alreadyGuessed):
         print('Do you want to play again? Yes or No?')
         return input().lower().startswith('y')
         
+        # Xhos
+        difficulty ='X'
+        while difficulty not in 'EMH':
+            print('Please choose Easy, Medium or Hard. Type the first letter then press enter.\n')
+            difficluty = input().upper() 
+        If difficulty == 'N' :   # Normal
+            del HANGMAN_BOARD[8]
+            del HANGMAN_BOARD[7]
+        
+        If difficulty == 'H' : #HARD
+            del HANGMAN_BOARD[8]
+            del HANGMAN_BOARD[7]
+            del HANGMAN_BOARD[5]
+            del HANGMAN_BOARD[3]
+        
     # Introduce the game
     print('Welcome to Hangman by Ryan K.')
     missedLetters = ''
     correctLetters = ''
-    secretWord = getRandomWord(words)
+    secretWord, secretSet = getRandomWord(words)
     gameIsDone = false
     
     # Main Game Loop
     while True:
+        print('The secret word is from the' + secretSet + 'category.\n')
         displayBoard(missedLetters, correctLetters, secretWord)
         
         guess = getGuess(missedLetters + correctLetters)
@@ -138,7 +161,7 @@ def getGuess(alreadyGuessed):
                 missedLetters = ''
                 correctLetters = ''
                 gameIsDone = False
-                secretWord = getRandomWord(words)
+                secretWord, secretSet = getRandomWord(words)
             else:
                 break
                 
