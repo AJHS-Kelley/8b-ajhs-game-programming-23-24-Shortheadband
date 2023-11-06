@@ -1,8 +1,15 @@
-# Hangman Game by Gabriel Coffey, v0.4
+# Hangman Game by Gabriel Coffey, v0.5
 import random
 
-words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
-print(words)
+#words = 'Cat Bat Rat Car Bar Star Bored Help Belt Tilt Machine Hammer Hourglass Vogage Punishment Divine Rewind Combine TombStone Chrome Celestial Beatiful Guardian Alliance Lyric circular motherboard Critical Mystical Dynasty'.split()
+# Dictionary verision
+# STored in Key:Value Pairs.
+# Actual Dictionary Word (Key) : Value (Definition)
+# Uses {} to specify a dictionary.
+words = {'Colors':'red orange yellow green blue indigo violet fuschia teal garnet gold black white sliver gold'.split(), 'Animals': 'cat cow dog moose goose fish wombat wolverine giraffe hippotamus lion alligator'.split(), 'Shapes': 'square triangle circle rhombus parallelogram trapezoid diamond dodecahedron'.split(), 'Foods': 'hamburger hotdog fries waffle pancake escargot oysters chips steak'.split()}
+
+
+# print(words)
 HANGMAN_BOARD = ['''
    
     +---+
@@ -112,10 +119,10 @@ def getGuess(alreadyGuessed):
                 if secretWord[i] not in correctLetters:
                     foundAllLetters = false
                     break
-                if foundAllLetters:
-                    print('That is pretty based! well Done.')
-                    print('The secret word was' + secretWord)
-                    gameIsDone = True
+            if foundAllLetters:
+                print('That is pretty based! well Done.')
+                print('The secret word was' + secretWord)
+                gameIsDone = True
         else:
             missedLetters = missedLetters + guess
             
