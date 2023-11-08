@@ -104,27 +104,27 @@ def getGuess(alreadyGuessed):
         print('Do you want to play again? Yes or No?')
         return input().lower().startswith('y')
         
-        # Xhos
-        difficulty ='X'
-        while difficulty not in 'EMH':
-            print('Please choose Easy, Medium or Hard. Type the first letter then press enter.\n')
-            difficluty = input().upper() 
-        If difficulty == 'N' :   # Normal
-            del HANGMAN_BOARD[8]
-            del HANGMAN_BOARD[7]
+ # Xhos
+difficulty = 'X'
+while difficulty not in 'EMH':
+    print('Please choose Easy, Medium or Hard. Type the first letter then press enter.\n')
+    difficulty = input().upper()
+    if  difficulty == 'N' :   # Normal
+        del HANGMAN_BOARD[8]
+        del HANGMAN_BOARD[7]
         
-        If difficulty == 'H' : #HARD
-            del HANGMAN_BOARD[8]
-            del HANGMAN_BOARD[7]
-            del HANGMAN_BOARD[5]
-            del HANGMAN_BOARD[3]
+    if  difficulty == 'H' :   # Hard
+        del HANGMAN_BOARD[8]
+        del HANGMAN_BOARD[7]
+        del HANGMAN_BOARD[5]
+        del HANGMAN_BOARD[3]
         
     # Introduce the game
     print('Welcome to Hangman by Ryan K.')
     missedLetters = ''
     correctLetters = ''
     secretWord, secretSet = getRandomWord(words)
-    gameIsDone = false
+    gameIsDone = False
     
     # Main Game Loop
     while True:
@@ -140,7 +140,7 @@ def getGuess(alreadyGuessed):
             foundAllLetters = True
             for i in range(len(secretWord)):
                 if secretWord[i] not in correctLetters:
-                    foundAllLetters = false
+                    foundAllLetters = False
                     break
             if foundAllLetters:
                 print('That is pretty based! well Done.')
