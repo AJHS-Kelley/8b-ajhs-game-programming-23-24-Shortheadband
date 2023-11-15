@@ -49,12 +49,12 @@ def sprintBurst(playerStamina, burstUnlocked):
         if playerStamina == 10:
             burstMeter = 1
             print("sprintBurst is ready")
-if burstMeter == 1:
-    sprintBurst = True
-    playerStamina = 10
-    while playerStamina > 0:
-        print(playerStamina)
-        playerStamina - 1
+
+    if burstMeter == 1:
+        playerStamina = 10
+        while playerStamina > 0:
+                print(playerStamina)
+                playerStamina - 1
 
 
 def glide(gliderCollected):
