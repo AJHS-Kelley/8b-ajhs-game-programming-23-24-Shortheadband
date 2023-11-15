@@ -1,4 +1,4 @@
-# Example Game Function project, Gabriel Coffey, v0.1
+# Example Game Function project, Gabriel Coffey, v0.2
 import random
 def functionOne():
     pass
@@ -27,13 +27,38 @@ def functionFour(param1, Param2, param3):
 
 # Game Type: Platformer
 
-def sprint(fullSprint, playerStamina, exhausted):
-    if playerStamina >= 1 is True and exhausted is False:
-        fullSprint = True
-    else: exhausted is True
-    
+def stamina(playerStamina, exhausted):
+    if playerStamina >= 1:
+        sprint = True
+        glide = False    
+    elif playerStamina >= 3:
+        sprint = True
+        glide = True 
+    elif playerStamina == 0:
+        print("You're exhausted, Take your time.")
+        exhausted = True
+        playerStamina = 0
+        while playerStamina < 10:
+            print(playerStamina)
+            playerStamina += 1
 
-def gameOver(lives,currency):
-    if
 
-    
+def sprintBurst(playerStamina, burstUnlocked):
+    if burstUnlocked == True:
+        burstMeter = 0
+        if playerStamina == 10:
+            burstMeter = 1
+            print("sprintBurst is ready")
+if burstMeter == 1:
+    sprintBurst = True
+    playerStamina = 10
+    while playerStamina > 0:
+        print(playerStamina)
+        playerStamina - 1
+
+
+def glide(gliderCollected):
+    if gliderCollected == True:
+        if ((playerStamina >= 3) and (exhausted == False)):
+            glide = True
+        elif (playerStamina = 0) 
