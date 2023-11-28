@@ -1,4 +1,4 @@
-# Example Game Function project, Gabriel Coffey, v0.2
+# Example Game Function project, Gabriel Coffey, v0.3p
 import random
 def functionOne():
     pass
@@ -56,7 +56,6 @@ def sprintBurst(playerStamina, burstUnlocked):
                 print(playerStamina)
                 playerStamina - 1
 
-
 def powerScale(styleScale, playerPower,powerLevel):
     if playerPower == 100:  
         powerLevel  = 1
@@ -71,3 +70,20 @@ def powerScale(styleScale, playerPower,powerLevel):
     elif powerLevel == 1 and styleScale >= 10:
         midAirDashPlus = True
         maximumLeap = True   
+    
+def powerStance(powerStance,styleScale,playerPower):
+    if playerPower >= 300 and styleScale >= 50:
+        powerStance = True
+    elif playerPower >= 375 and styleScale >= 120:
+        powerStancePlus = True
+    if powerStance == True:
+        playerStamina = 0
+        exhausted = False
+        burstMeter = 0
+        blazingKick = True
+    elif powerStancePlus == True:
+        playerStamina = 100
+        exhausted = False
+        burstMeter = 1
+        blazingKick = True
+        auraStorm = True
