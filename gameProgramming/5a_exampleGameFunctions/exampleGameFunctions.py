@@ -59,6 +59,4 @@ def sprintBurst(playerStamina, burstUnlocked):
 
 def glide(gliderCollected):
     if gliderCollected == True:
-        if ((playerStamina >= 3) and (exhausted == False)):
-            glide = True
-        elif (playerStamina = 0) 
+        if
