@@ -57,6 +57,17 @@ def sprintBurst(playerStamina, burstUnlocked):
                 playerStamina - 1
 
 
-def glide(gliderCollected):
-    if gliderCollected == True:
-        if
+def powerScale(styleScale, playerPower,powerLevel):
+    if playerPower == 100:  
+        powerLevel  = 1
+    elif playerPower == 250:
+        powerLevel = 2
+    elif playerPower == 500:
+        powerLevel = 3
+    else: print("You're too weak!")    
+                  
+    if powerLevel == 1 and styleScale >= 0:
+        midAirDash = True
+    elif powerLevel == 1 and styleScale >= 10:
+        midAirDashPlus = True
+        maximumLeap = True   
