@@ -62,8 +62,8 @@ HANGMAN_BOARD = ['''
 # Pcik word from Dictionary    
 def getRandomWord(wordDict): # Return a random word from the list
     wordKey = random.choice(list(wordDict.keys()))
-    wordIndex = random.randiant(0,len(wordDict[wordKey] - 1))
-    return wordDict[wordIndex]
+    wordIndex = random.randiant(0,len(wordDict[wordKey] - 1)
+    return [wordDict[wordKey][wordIndex], wordKey]
     
 
 def displayBoard(missedLetters, correctLetters , secretWord):
