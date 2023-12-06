@@ -1,5 +1,9 @@
 # Example Game Function project, Gabriel Coffey, v0.3p
 import random
+
+# Need to use the random.randint() function. 
+# Go back and add the function calls to test them. 
+
 def functionOne():
     pass
 
@@ -87,7 +91,10 @@ def powerStance(powerStance,styleScale,playerPower):
         burstMeter = 1
         blazingKick = True
         auraStorm = True
+    return blazingKick 
 
+    # My suggestion is to make a function that returns each of these status effects as a separate function.  
+    
 
 
 # reviewed by William Castengera
