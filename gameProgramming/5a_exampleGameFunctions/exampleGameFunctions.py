@@ -1,5 +1,12 @@
 # Example Game Function project, Gabriel Coffey, v0.3p
 import random
+playerStamina = 1
+exhausted = 0
+burstUnlocked = 1
+styleScale = 1
+playerPower = 0
+powerLevel = 1
+sleep = 1
 # Lily Was Here <3
 # Need to use the random.randint() function. 
 # Go back and add the function calls to test them. 
@@ -31,24 +38,22 @@ def functionFour(param1, Param2, param3):
 
 # Game Type: Platformer
 
-def stamina(playerStamina, exhausted): # I think that you might have to have somestuff to print out. You should try to make it text based
-    if playerStamina >= 3: # you could also try to limit what you can do because you are running out of time
-        sprint = True
-        glide = False    
-    elif playerStamina >= 1: # you would want to make the bigger number come first. They will never be able to glide then
+def stamina(playerStamina, exhausted): # I think that you might have to have somestuff to print out. You should try to make it text based   
+    if playerStamina >= 3: # you would want to make the bigger number come first. They will never be able to glide then
         sprint = True
         glide = True 
     elif playerStamina == 0: # there is no else in this if else thing
         print("You're exhausted, Take your time.")
-        exhausted = True # you might not need this. What is the point with it?
+        exhausted = 1 # you might not need this. What is the point with it?
         playerStamina = 0
         while playerStamina < 10: # you might not want this to be in this function. Maybe make a option function so that you don't gain stamina when you are trying to do something that costs stamina
             print(playerStamina)
             playerStamina += 1
 
+stamina(playerStamina, exhausted)
 
 def sprintBurst(playerStamina, burstUnlocked):
-    if burstUnlocked == True:
+    if burstUnlocked == 1:
         burstMeter = 0
         if playerStamina == 10:
             burstMeter = 1
@@ -59,6 +64,8 @@ def sprintBurst(playerStamina, burstUnlocked):
         while playerStamina > 0: # what? Is this tring to use sprintBurst? Cause this will just lower it to 9 stamina automadicly
                 print(playerStamina)
                 playerStamina - 1
+
+sprintBurst(playerStamina, burstUnlocked)                
 
 def powerScale(styleScale, playerPower,powerLevel): # what is the ulatme goal is this? How would it be in game play?
     if playerPower == 100:  
@@ -73,7 +80,9 @@ def powerScale(styleScale, playerPower,powerLevel): # what is the ulatme goal is
         midAirDash = True # what about the false
     elif powerLevel == 1 and styleScale >= 10:
         midAirDashPlus = True
-        maximumLeap = True   
+        maximumLeap = True
+
+powerScale(styleScale, playerPower,powerLevel)           
     
 def powerStance(powerStance,styleScale,playerPower):
     if playerPower >= 300 and styleScale >= 50:
@@ -84,14 +93,20 @@ def powerStance(powerStance,styleScale,playerPower):
         playerStamina = 0
         exhausted = False
         burstMeter = 0
-        blazingKick = True
     elif powerStancePlus == True:
         playerStamina = 100
         exhausted = False
         burstMeter = 1
         blazingKick = True
-        auraStorm = True
+        
     return blazingKick 
+
+powerScale(styleScale, playerPower,powerLevel)
+
+def rest(sleep):
+    if sleep == 1:
+        input('Looks like the day is over would you like to sleep')
+  
 
 # rember to make a actual game play part of the code. So you can use the functions
 
