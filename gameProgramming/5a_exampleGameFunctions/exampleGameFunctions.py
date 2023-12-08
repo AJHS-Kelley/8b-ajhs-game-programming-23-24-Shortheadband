@@ -1,5 +1,8 @@
-# Example Game Function project, Gabriel Coffey, v0.3p
+# Example Game Function project, Gabriel Coffey, v0.5r
 import random
+
+sleep = random.randint(0,24)
+rest = "yes"
 playerStamina = 1
 exhausted = 0
 burstUnlocked = 1
@@ -7,6 +10,10 @@ styleScale = 1
 playerPower = 0
 powerLevel = 1
 sleep = 1
+powerStancePlus = 1
+powerAura = 0
+totalTime= random.randint(0,24)
+acceptRest = "yes"
 # Lily Was Here <3
 # Need to use the random.randint() function. 
 # Go back and add the function calls to test them. 
@@ -50,7 +57,6 @@ def stamina(playerStamina, exhausted): # I think that you might have to have som
             print(playerStamina)
             playerStamina += 1
 
-stamina(playerStamina, exhausted)
 
 def sprintBurst(playerStamina, burstUnlocked):
     if burstUnlocked == 1:
@@ -64,8 +70,7 @@ def sprintBurst(playerStamina, burstUnlocked):
         while playerStamina > 0: # what? Is this tring to use sprintBurst? Cause this will just lower it to 9 stamina automadicly
                 print(playerStamina)
                 playerStamina - 1
-
-sprintBurst(playerStamina, burstUnlocked)                
+              
 
 def powerScale(styleScale, playerPower,powerLevel): # what is the ulatme goal is this? How would it be in game play?
     if playerPower == 100:  
@@ -81,32 +86,33 @@ def powerScale(styleScale, playerPower,powerLevel): # what is the ulatme goal is
     elif powerLevel == 1 and styleScale >= 10:
         midAirDashPlus = True
         maximumLeap = True
-
-powerScale(styleScale, playerPower,powerLevel)           
+         
     
-def powerStance(powerStance,styleScale,playerPower):
+def powerStance(powerAura,styleScale,playerPower):
     if playerPower >= 300 and styleScale >= 50:
-        powerStance = True
+        powerAura = True
     elif playerPower >= 375 and styleScale >= 120:
-        powerStancePlus = True
-    if powerStance == True:
-        playerStamina = 0
-        exhausted = False
-        burstMeter = 0
-    elif powerStancePlus == True:
-        playerStamina = 100
-        exhausted = False
-        burstMeter = 1
+        powerAuraPlus = True
+    if powerAura == True:
         blazingKick = True
-        
-    return blazingKick 
 
-powerScale(styleScale, playerPower,powerLevel)
 
 def rest(sleep):
     if sleep == 1:
-        input('Looks like the day is over would you like to sleep')
-  
+        input(f'Looks like the journey is over after {sleep} hours! would like to sleep now.\n yes or no\n')
+        if acceptRest == "yes":
+            print("Alright to to hit the hay!")
+        else:
+            print("Well a hero's journey is never truly done aslong as evil is afoot.")
+              
+
+# Code test
+
+stamina(playerStamina, exhausted)
+sprintBurst(playerStamina, burstUnlocked)   
+powerScale(styleScale, playerPower,powerLevel) 
+powerStance(powerStance,styleScale,playerPower)
+rest(sleep)   
 
 # rember to make a actual game play part of the code. So you can use the functions
 
