@@ -32,10 +32,10 @@ def functionFour(param1, Param2, param3):
 # Game Type: Platformer
 
 def stamina(playerStamina, exhausted): # I think that you might have to have somestuff to print out. You should try to make it text based
-    if playerStamina >= 1: # you could also try to limit what you can do because you are running out of time
+    if playerStamina >= 3: # you could also try to limit what you can do because you are running out of time
         sprint = True
         glide = False    
-    elif playerStamina >= 3: # you would want to make the bigger number come first. They will never be able to glide then
+    elif playerStamina >= 1: # you would want to make the bigger number come first. They will never be able to glide then
         sprint = True
         glide = True 
     elif playerStamina == 0: # there is no else in this if else thing
