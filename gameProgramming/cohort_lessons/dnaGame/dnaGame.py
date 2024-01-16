@@ -1,4 +1,4 @@
-# DNA relpication Game, gabriel Coffey, v0.3
+# DNA relpication Game, gabriel Coffey, v0.3.5
 
 # Import Entire Modules -- Get whole tool box.
 import time, datetime
@@ -60,7 +60,42 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
             print("No match detected")    
     return isMatch        
 
+def calcScore(rnaSequence: str, rnaTime: float) -> int:
+    score = 0
+    if rnaTime < 5.0: # Fastest Time, Highest Score
+        score += 1000000
+    elif rnaTime < 10.0: 
+        score += 700000
+    elif rnaTime < 15.0: 
+        score += 500000
+    elif rnaTime < 25.0: 
+        score += 250000
+    else:
+        score += 100000     
+
+
+    scoreMulti = 0.0
+    if len(rnaSequence) >= 15:
+        score = 5.0
+    elif len(rnaSequence) >= 10:
+        scoreMulti = 3.0
+    elif len(rnaSequence) >= 5:
+        scoreMulti = 1.0
+    else:
+        scoreMulti = 0.5
+
+score *= scoreMulti
+return score
+
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float) -> None:
+    playerName = input("What is your first name?\n")
+    lastName = input("What is your last name?\n")
+    fullName = playerName + " " + lastName
+
+    fileName = "dnaReplicationScore" + fullName + ".txt"
 
 dna = genDNA()
 rna = doTranscription(dna)
 print(verifySequence(dna,rna[0]))
+
+print(calcScore(rna[0]), rna[1])
