@@ -1,4 +1,4 @@
-# DNA relpication Game, gabriel Coffey, v0.2
+# DNA relpication Game, gabriel Coffey, v0.3
 
 # Import Entire Modules -- Get whole tool box.
 import time, datetime
@@ -28,7 +28,7 @@ print(dna)
     
     #return "STRING"
 
-def genRNA(dnaSequence: str) -> tuple:
+def doTranscription(dnaSequence: str) -> tuple:
     print(f"The DNA Sequence is {dnaSequence}.\n")
     print("You will now genrerate the RNA sequence that would match.\n")
     print("Please remeber, in the RNA sequence ? matches with A from the DNA sequence")
@@ -42,5 +42,25 @@ def genRNA(dnaSequence: str) -> tuple:
     # Tuples are UNCHANGEABLE -- you cannot add, modify, or delete after creating
     # Tuples CAN have duplicate values.
 
-rna = genRNA(dna)
-print(rna)
+def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
+    isMatch = False
+    if len(dnaSequence) != len(rnaSequence):
+        print("The sequences are different lengths and cannot match.\n")
+        return isMatch
+    for dnaBase, rnaBase in zip(dnaSequence,rnaSequence):
+        if dnaBase == "A" and rnaBase == "U":
+            isMatch = True
+        elif dnaBase == "C" and rnaBase == "C":
+            isMatch = True
+        elif dnaBase == "G" and rnaBase == "C":
+            isMatch = True
+        elif dnaBase == "T" and rnaBase == "A":
+            isMatch = True
+        else:
+            print("No match detected")    
+    return isMatch        
+
+
+dna = genDNA()
+rna = doTranscription(dna)
+print(verifySequence(dna,rna[0]))
