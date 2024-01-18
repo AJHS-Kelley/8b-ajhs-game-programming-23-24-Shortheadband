@@ -1,4 +1,4 @@
-# DNA relpication Game, gabriel Coffey, v0.3.5
+# DNA relpication Game, gabriel Coffey, v0.4
 
 # Import Entire Modules -- Get whole tool box.
 import time, datetime
@@ -84,18 +84,29 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     else:
         scoreMulti = 0.5
 
-score *= scoreMulti
-return score
+    score *= scoreMulti
+    return score
 
-def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float) -> None:
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) -> None:
     playerName = input("What is your first name?\n")
     lastName = input("What is your last name?\n")
     fullName = playerName + " " + lastName
 
     fileName = "dnaReplicationScore" + fullName + ".txt"
+    saveData = open(fileName, "a")
+    # File Modes
+    # "x" mode -- Create FIle, IF FILE EXISTS, EXIT WITH ERROR
+    # "w" mode -- Create FIle, IF FILE EXISTS, OVERWRITE IT
+    # "a" mode -- Create FIle, IF FILE EXISTS, APPEND TO IT
+    saveData.write(f"DNA Sequence: {dnaSequence}\nRNA Sequence: {rnaSequence}\n")
+    saveData.write(f"Transcription Time: {rnaTime}\n")
+    saveData.write(f"score: {score}\n")
+    saveData.write(f"{fullName}\n")
+    saveData.write(f"{datetime.datetime.now()}\n")
+    saveData.close
 
 dna = genDNA()
 rna = doTranscription(dna)
-print(verifySequence(dna,rna[0]))
-
-print(calcScore(rna[0]), rna[1])
+if verifySequence(dna, rna[0]):
+   score = calcScore(rna[0], rna[1])
+   saveScore(dna, rna[0], rna[1], score)

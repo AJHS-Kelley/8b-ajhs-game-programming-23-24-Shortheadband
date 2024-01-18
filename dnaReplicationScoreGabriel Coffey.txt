@@ -1,0 +1,12 @@
+DNA Sequence: TTA
+RNA Sequence: AAU
+ Transcription Time: 19.023709774017334
+score: 125000.0
+Gabriel Coffey
+2024-01-18 14:21:31.242646
+DNA Sequence: A
+RNA Sequence: U
+Transcription Time: 7.536514520645142
+score: 350000.0
+Gabriel Coffey
+2024-01-18 14:22:35.533934
