@@ -34,8 +34,16 @@ def doTranscription(dnaSequence: str) -> tuple:
     print("Please remeber, in the RNA sequence ? matches with A from the DNA sequence")
     rnaStart = time.time() # time.time() returns the number of seconds since 00:00:00 UTC Jan, 01, 1970
     rnaSequence = input("Please enter the matching RNA sequence. Leave no spaces! Then press enter.\n").upper()
-    rnaStop = time.time()
-    rnaTime = rnaStop - rnaStart
+    if rnaSequence == dnaBases:
+        rnaStop = time.time()
+        rnaTime = rnaStop - rnaStart
+        return (rnaSequence, rnaTime)
+    else:
+        print("Nu uh")
+        rnaSequence = input("Please enter the matching RNA sequence. Leave no spaces! Then press enter.\n").upper()
+        return rnaSequence
+        
+    
 
     return (rnaSequence, rnaTime)
     # Tuples are ordered -- you can refernce items with the index.
