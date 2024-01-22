@@ -44,9 +44,14 @@ XMARGIN = int((WINDOWWIDTH -(TILESIZE * BOARDWIDTH + (BOARDWIDTH - 1))) /2)
 # int((640 - (161.5)
 # int(478.5)
 # XMARGIN = 478
-print(XMARGIN)
-YMARGIN = 
+# print(XMARGIN)
+YMARGIN = int((WINDOWHEIGHT -(TILESIZE * BOARDWIDTH + (BOARDWIDTH - 1))) /2)
 
+# DIRECTIONS
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
 
 
 
