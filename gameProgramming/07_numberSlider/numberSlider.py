@@ -3,7 +3,7 @@
 import sys, random, pygame
 # sys module provides access to system resources (i.e. Operating system commands)
 
-from pygame import *
+from pygame.locals import *
 # allows us to call functions from pygame using just the function name instead of module.functions
 # Example: We can use draw() instead of pygame.draw()
 
