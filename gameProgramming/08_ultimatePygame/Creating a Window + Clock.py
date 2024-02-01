@@ -11,6 +11,9 @@ sky_surface = pygame.image.load('img/Ult_pygame/Sky.jpg').convert()
 ground_surface = pygame.image.load('img/Ult_pygame/Ground.jpg').convert()
 text_surface = test_font.render('Sunset Runner', False, 'Blue').convert()
 
+player_surface = pygame.image.load('img/Ult_pygame/Player/player_walk_1.png')
+player_rectangle = player_surface.get_rect(midbottom = (80,355))
+
 snail_surface = pygame.image.load('img/Ult_pygame/snail/snail1.png').convert_alpha()
 snail_x_pos = 600
 
@@ -26,6 +29,7 @@ while True:
     screen.blit(text_surface,(275,50))
     snail_x_pos += -2.5
     if snail_x_pos < -100: snail_x_pos = 800
+    screen.blit(player_surface,player_rectangle)
     screen.blit(snail_surface,(snail_x_pos,320))
 
     pygame.display.update()
