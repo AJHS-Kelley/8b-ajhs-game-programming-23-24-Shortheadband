@@ -7,9 +7,12 @@ pygame.display.set_caption('SSR')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
 
-sky_surface = pygame.image.load('img/Ult_pygame/Sky.jpg')
-ground_surface = pygame.image.load('img/Ult_pygame/Ground.jpg')
-text_surface = test_font.render('Sunset Runner', False, 'Blue')
+sky_surface = pygame.image.load('img/Ult_pygame/Sky.jpg').convert()
+ground_surface = pygame.image.load('img/Ult_pygame/Ground.jpg').convert()
+text_surface = test_font.render('Sunset Runner', False, 'Blue').convert()
+
+snail_surface = pygame.image.load('img/Ult_pygame/snail/snail1.png').convert_alpha()
+snail_x_pos = 600
 
 
 while True:
@@ -19,8 +22,11 @@ while True:
             exit()
 
     screen.blit(ground_surface,(0,0))
-    screen.blit(sky_surface,(0,-25))
+    screen.blit(sky_surface,(0,-35))
     screen.blit(text_surface,(275,50))
+    snail_x_pos += -2.5
+    if snail_x_pos < -100: snail_x_pos = 800
+    screen.blit(snail_surface,(snail_x_pos,320))
 
     pygame.display.update()
     clock.tick(60)
