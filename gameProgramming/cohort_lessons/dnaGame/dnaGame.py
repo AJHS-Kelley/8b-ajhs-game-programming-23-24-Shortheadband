@@ -21,10 +21,10 @@ def gameIntro() -> None:
 
 def genDNA() -> str:
     basesGenerated = 0
-    BasesRequested = int(input("Please enter a postive integer number of bases to generate.\n"))
+    basesRequested = int(input("Please enter a postive integer number of bases to generate.\n"))
     dnaSequence = ""
 
-    while basesGenerated < BasesRequested:
+    while basesGenerated < basesRequested:
         dnaSequence += choice(dnaBases)
         basesGenerated += 1
     return dnaSequence    
@@ -48,10 +48,12 @@ def doTranscription(dnaSequence: str) -> tuple:
         print("Nu uh")
         rnaSequence = input("Please enter the matching RNA sequence. Leave no spaces! Then press enter.\n").upper()
         return rnaSequence
+    
         
     
 
-    return (rnaSequence, rnaTime)
+
+    # return (rnaSequence, rnaTime)
     # Tuples are ordered -- you can refernce items with the index.
     # Tuples are UNCHANGEABLE -- you cannot add, modify, or delete after creating
     # Tuples CAN have duplicate values.
