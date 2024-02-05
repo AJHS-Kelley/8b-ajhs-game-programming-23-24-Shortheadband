@@ -1,5 +1,11 @@
 # DNA relpication Game, gabriel Coffey, v0.4
 
+# Your code is asking for the num. of bases to generate twice. 
+# It then generates two different DNA sequences on the screen. 
+# When attempting to match, I am getting errors that the lengths are not equal. 
+# I also received at least one error for what should have been a matching strand. 
+# Please revise and update your code, then submit to GitHub and tag me on Teams. 
+
 # Import Entire Modules -- Get whole tool box.
 import time, datetime
 
