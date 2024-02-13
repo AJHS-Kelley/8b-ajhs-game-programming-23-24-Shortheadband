@@ -36,6 +36,9 @@ while True:
 
     if player_rectangle.colliderect(snail_x_rectangle):
         print('collision')
+    if player_rectangle.collidepoint((x,y)):
+        print('collision')
+
 
     pygame.display.update()
     clock.tick(60)
