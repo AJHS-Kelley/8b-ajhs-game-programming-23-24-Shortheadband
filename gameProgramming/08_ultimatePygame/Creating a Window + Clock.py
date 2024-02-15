@@ -20,17 +20,21 @@ player_gravity = 0
 snail_surface = pygame.image.load('img/Ult_pygame/snail/snail1.png').convert_alpha()
 snail_x_rectangle = snail_surface.get_rect(bottomright = (700,355))
 
-
+#doubleJump = 1
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-        if event.type == pygame.MOUSEMOTION:
-            if  player_rectangle.collidepoint(event.pos): print('collsion')
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if  player_rectangle.collidepoint(event.pos):
+                player_gravity = -17
         if event.type ==pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                player_gravity = -20      
+            if event.key == pygame.K_SPACE and player_rectangle.bottom >= 300:
+                player_gravity = -17    
+                #if player_rectangle.bottom >= 250 and int(doubleJump): 
+                #    player_gravity = -13.9,
+                    
 
     screen.blit(ground_surface,(0,0))
     screen.blit(sky_surface,(0,-35))
@@ -39,14 +43,22 @@ while True:
     pygame.draw.circle(screen,'gold',pygame.mouse.get_pos(),10)
     screen.blit(score_surface,score_rectangle)
 
-    snail_x_rectangle.x -= 3
+    snail_x_rectangle.x -= 5.5
     if snail_x_rectangle.right <=0: snail_x_rectangle.left = 800
 
     screen.blit(player_surface,player_rectangle)
-
+    
+    # Player
     player_gravity += 1
     player_rectangle.y += player_gravity
+    if player_rectangle.bottom >= 355: player_rectangle.bottom = 355
     screen.blit(snail_surface,snail_x_rectangle)
+
+    # collision
+    if snail_x_rectangle.colliderect(player_rectangle):
+        pygame.quit()
+        exit()
+
     #keys = pygame.key.get_pressed()
     #if keys[pygame.K_SPACE]:
     #    print('jump')
