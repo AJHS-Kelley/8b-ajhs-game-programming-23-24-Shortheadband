@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('SSR')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
-game_active = True
+game_active = False
 start_time = 0
 
 sky_surface = pygame.image.load('img/Ult_pygame/Sky.jpg').convert()
@@ -47,7 +47,7 @@ while True:
                 #if player_rectangle.bottom >= 250 and int(doubleJump): 
                 #    player_gravity = -13.9,
     else:
-        if game_active == False:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
             game_active = True
             snail_x_rectangle.left = 800
             print("restart")
@@ -80,11 +80,7 @@ while True:
        if snail_x_rectangle.colliderect(player_rectangle):
             game_active = False
     else:
-        screen.fill('yellow')
-
-    #keys = pygame.key.get_pressed()
-    #if keys[pygame.K_SPACE]:
-    #    print('jump')
+        screen.fill((94,129,162))
 
     #keys =pygame.key.get_pressed()
     #if keys[pygame.K_SPACE]:
