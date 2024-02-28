@@ -8,6 +8,7 @@ def display_score():
     score_rect = score_surf.get_rect(center = (400,70))
     screen.blit(score_surf,score_rect)
     print(current_time)
+    return current_time
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
@@ -16,6 +17,7 @@ clock = pygame.time.Clock()
 test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
 game_active = False
 start_time = 0
+score = 0
 
 sky_surface = pygame.image.load('img/Ult_pygame/Sky.jpg').convert()
 ground_surface = pygame.image.load('img/Ult_pygame/Ground.jpg').convert()
@@ -27,8 +29,15 @@ player_surface = pygame.image.load('img/Ult_pygame/Player/player_walk_1.png')
 player_rectangle = player_surface.get_rect(midbottom = (80,355))
 player_gravity = 0
 
+player_stand = pygame.image.load('img/Ult_pygame/Player/player_stand.png').convert_alpha()
+player_stand = pygame.transform.rotozoom(player_stand,0,2)
+player_stand_rectangle = player_stand.get_rect(center = (400,200))
+
 snail_surface = pygame.image.load('img/Ult_pygame/snail/snail1.png').convert_alpha()
 snail_x_rectangle = snail_surface.get_rect(bottomright = (700,355))
+
+game_message = test_font.render('Press space to run',False,(111,196,169))
+game_message_rectangle = game_message.get_rect(center = (400,340))
 
 #doubleJump = 1
 while True:
@@ -42,12 +51,12 @@ while True:
                 player_gravity = -19.5
 
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE and player_rectangle.bottom >= 320:
+            if event.key == pygame.K_SPACE(event.pos)  and player_rectangle.bottom >= 320:
                 player_gravity = -19.5    
                 #if player_rectangle.bottom >= 250 and int(doubleJump): 
                 #    player_gravity = -13.9,
     else:
-        if game_active == False:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
             game_active = True
             snail_x_rectangle.left = 800
             print("restart")
@@ -61,6 +70,7 @@ while True:
        pygame.draw.circle(screen,'gold',pygame.mouse.get_pos(),10)
        screen.blit(title_surface,title_rectangle)
        display_score()
+       score = display_score()
 
        snail_x_rectangle.x -= 5.5
        if snail_x_rectangle.right <=0: snail_x_rectangle.left = 800
@@ -81,7 +91,17 @@ while True:
             game_active = False
     else:
         screen.fill((94,129,162))
+        screen.blit(player_stand,player_stand_rectangle)
+        screen.blit(title_surface,title_rectangle)
 
+        score_message = test_font.render(f'Your score: {score}',False,(111,196,169))
+        score_message_rectangle = score_message.get_rect(center = (400,330))
+        screen.blit(game_message,game_message_rectangle)
+
+        if score == 0:
+            screen.blit(game_message,game_message_rectangle)
+        else:
+            screen.blit(score_message,score_message_rectangle)
     #keys =pygame.key.get_pressed()
     #if keys[pygame.K_SPACE]:
     #    print('jump')
