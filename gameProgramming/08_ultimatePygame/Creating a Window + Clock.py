@@ -47,7 +47,7 @@ while True:
                 #if player_rectangle.bottom >= 250 and int(doubleJump): 
                 #    player_gravity = -13.9,
     else:
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+        if game_active == False:
             game_active = True
             snail_x_rectangle.left = 800
             print("restart")
