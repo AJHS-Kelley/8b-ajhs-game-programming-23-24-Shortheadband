@@ -15,5 +15,25 @@ Objectives / Enemies / Obstacles:
 Items / Equipment / objects:
 -- Flame Core
 -- Boots with 2 variants,(Base,Stone)
--- 
+
+Diffucluty Changes:
+-- Bigger Enemies
+-- slight level changes + level recolor
+-- Lower Hp
+
+Controls:
+-- X-Input(Controller)
+- A = Jump
+- B = Attack
+- LB = Run
+- LT = Sheld
+- X = Drop Core
+- Start = Pause
+-- Keyboard
+- X = Jump
+- C = Attack
+- Z = Run
+- A = shelid
+- D = Drop Core
+- Enter = Pause
 
