@@ -1,0 +1,19 @@
+Game Genre / Type: Platformer 
+Theme: Future-Fantsay
+Win COndition: Get through the level
+Loss Condition: Get hit 4 times
+
+Levels / screens:
+-- Grassland transitions into Factory area
+-- Tutorial area with crystals (Lots of purple)
+
+Objectives / Enemies / Obstacles:
+-- slime with 3 variants,(Base,electric,Fire)
+-- spicks, bottomless pit, Deep water,
+-- get through the level
+
+Items / Equipment / objects:
+-- Flame Core
+-- Boots with 2 variants,(Base,Stone)
+-- 
+
