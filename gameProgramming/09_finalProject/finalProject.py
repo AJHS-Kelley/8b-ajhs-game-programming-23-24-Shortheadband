@@ -4,7 +4,7 @@ import sys, random, pygame
 resoultion = 0 # 0 = LRes(800,600) 1 = HRes(1920,1080)
 
 if resoultion == 0:
-    X = 800
+    x = 800
     y = 600
 elif resoultion == 1:
     x = 1920
@@ -20,7 +20,7 @@ if difficulty == 1:
 else:    
     pygame.display.set_caption('Encore')
 
-screen = pygame.display.set_model((x,y))
+screen = pygame.display.set_mode((x,y))
 
 
 
