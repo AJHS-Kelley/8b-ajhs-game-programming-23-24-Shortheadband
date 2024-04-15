@@ -3,10 +3,10 @@ import sys, random, pygame
 
 resoultion = int(input("Please choose a difficulty. Enter 1 for Low Res or 2 for High Res")) # 0 = LRes(800,600) 1 = HRes(1920,1080)
 
-if resoultion == 0:
+if resoultion == 1:
     x = 800
     y = 600
-elif resoultion == 1:
+elif resoultion == 2:
     x = 1920
     y = 1080
 else: print("This resoultion isn't available")  
@@ -30,10 +30,3 @@ while run:
             run = False
 
 pygame.quit
-
-
-# Seed Charater sphere
-#seedel:
-#    def sphere(self, x, y, radius):
-#    self.x += self.vx
-#    self.y += self.vy
