@@ -1,5 +1,12 @@
 # FinalProject v0.0 by Gabriel Coffey
-import sys, random, pygame
+import sys, random, math, pygame
+from os import listdir
+from os.path import isfile, join
+pygame.init()
+
+BG_COLOR = (0, 255, 213)
+FPS = 60
+PLAYER_VEL = 5
 
 resoultion = int(input("Please choose a difficulty. Enter 1 for Low Res or 2 for High Res")) # 0 = LRes(800,600) 1 = HRes(1920,1080)
 
@@ -19,14 +26,23 @@ if difficulty == 1:
 else:    
     pygame.display.set_caption('Encore')
 
-screen = pygame.display.set_mode((x,y))
+window = pygame.display.set_mode((x,y))    
 
-pygame.init()
+def main(window):
+    clock = pygame.time.Clock()
 
-run = True
-while run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+    run = True
+    while run:
+        clock.tick(FPS)
 
-pygame.quit
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                
+    
+    pygame.quit()
+    quit()
+
+if __name__ == "__main__":
+    main(window)
+    
