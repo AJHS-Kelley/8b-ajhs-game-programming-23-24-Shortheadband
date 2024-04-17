@@ -28,6 +28,9 @@ else:
 
 window = pygame.display.set_mode((h,w))
 
+class Player(pygame.sprite.sprite):
+    
+
 def get_background(name):
     image = pygame.image.load(join("assets", "Background", name))
     x, y, _, _ = image.get_rect()
@@ -57,7 +60,8 @@ def main(window):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-                
+
+    draw(window, background, bg_image)            
     
     pygame.quit()
     quit()
