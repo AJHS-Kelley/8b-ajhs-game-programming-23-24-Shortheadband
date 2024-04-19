@@ -1,8 +1,24 @@
 # FinalProject v0.1 by Gabriel Coffey
 
-#Known Issue List
+# Known Issue List:
 #-- Background dosen't fill screen
+
+# Discarded code:
+
+#def retryRes(h,w,resoultion):
+#    if resoultion == 1:
+#        h = 800
+#        w = 600
+#    elif resoultion == 2:
+#        h = 1920
+#        w = 1080
+#    elif resoultion == 0:
+#        print("Ok")  
+#    else:
+#        print("This resoultion isn't available")
+#        retryRes
  
+from ast import Return
 import sys, random, math, pygame
 from os import listdir
 from os.path import isfile, join
@@ -12,7 +28,9 @@ BG_COLOR = (0, 255, 213)
 FPS = 60
 PLAYER_VEL = 5
 
-resoultion = int(input("Please choose a difficulty. Enter 1 for Low Res or 2 for High Res")) # 0 = LRes(800,600) 1 = HRes(1920,1080)
+
+resoultion = int(input("(0 for test)Please choose a difficulty. Enter 1 for Low Res or 2 for High Res")) # 0 = LRes(800,600) 1 = HRes(1920,1080)
+
 
 if resoultion == 1:
     h = 800
@@ -20,15 +38,21 @@ if resoultion == 1:
 elif resoultion == 2:
     h = 1920
     w = 1080
-else: print("This resoultion isn't available")  
+elif resoultion == 0:
+    print("Ok")  
+else:
+    print("This resoultion isn't available")
+
 
 
 difficulty = int(input("Please choose a difficulty. Enter 1 for Normal or 2 for Encore"))
 
 if difficulty == 1:
     pygame.display.set_caption('Normal')
-else:    
+elif difficulty == 2:    
     pygame.display.set_caption('Encore')
+else:
+    print("This resoultion isn't available")
 
 window = pygame.display.set_mode((h,w))
 
