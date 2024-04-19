@@ -8,7 +8,7 @@ Levels / screens:
 -- Tutorial area with crystals (Lots of purple)
 
 Objectives / Enemies / Obstacles:
--- slime with 3 variants,(Base,electric,Fire)
+-- slime with 2 variants,(Base,electric)
 -- spicks, bottomless pit, Deep water,
 -- get through the level
 
@@ -26,14 +26,12 @@ Controls:
 - A = Jump
 - B = Attack
 - LB = Run
-- LT = Sheld
 - X = Drop Core
 - Start = Pause
 -- Keyboard
 - X = Jump
 - C = Attack
 - Z = Run
-- A = shelid
 - D = Drop Core
 - Enter = Pause
 
