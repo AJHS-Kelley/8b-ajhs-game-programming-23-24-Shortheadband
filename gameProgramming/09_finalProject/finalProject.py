@@ -1,4 +1,9 @@
 # FinalProject v0.1 by Gabriel Coffey
+
+#Known Issue List
+#-- Background won't pop up until I close pygame
+#-- Background is multiplied in High Res
+ 
 import sys, random, math, pygame
 from os import listdir
 from os.path import isfile, join
@@ -61,6 +66,7 @@ class Player(pygame.sprite.Sprite):
     def draw(self, win):
         pygame.draw.rect(win, self.COLOR, self.rect)    
 
+#known Issue -- Background won't pop up until I close pygame
 def get_background(name):
     image = pygame.image.load(join("assets", "Background", name))
     _, _, width, height = image.get_rect()
@@ -73,7 +79,8 @@ def get_background(name):
 
     return tiles, image     
 
-def draw(window,background, bg_image, player):
+#known Issue -- Background is multiplied in High Res
+def draw(window, background, bg_image, player):
     for tile in background:
         window.blit(bg_image, tile)
 
