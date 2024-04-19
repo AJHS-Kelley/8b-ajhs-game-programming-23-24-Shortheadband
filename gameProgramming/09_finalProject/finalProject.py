@@ -1,4 +1,4 @@
-# FinalProject v0.0 by Gabriel Coffey
+# FinalProject v0.1 by Gabriel Coffey
 import sys, random, math, pygame
 from os import listdir
 from os.path import isfile, join
@@ -28,16 +28,16 @@ else:
 
 window = pygame.display.set_mode((h,w))
 
-class Player(pygame.sprite.sprite):
+class Player(pygame.sprite.Sprite):
     COLOR = (255,0, 9)
     
-    def __init__(self x, y, width, height):
+    def __init__(self, x, y, width, height):
         self.rect = pygame.Rect(x, y, width, height)
         self.x_vel = 0
         self.y_vel = 0
         self.mask = None
         self.direction = "left"
-        self.animation_count - 0
+        self.animation_count = 0
 
     def move(self, dx, dy):
         self.rect.x += dx 
@@ -49,7 +49,7 @@ class Player(pygame.sprite.sprite):
             self.direction = "left"
             self.animation_count = 0
     
-    def move_right(self, vel)
+    def move_right(self, vel):
         self.x_vel = vel
         if self.direction != "right":
             self.direction = "right"
@@ -63,15 +63,15 @@ class Player(pygame.sprite.sprite):
 
 def get_background(name):
     image = pygame.image.load(join("assets", "Background", name))
-    x, y, _, _ = image.get_rect()
+    _, _, width, height = image.get_rect()
     tiles = []
 
     for i in range(w // width + 1):
         for j in range(h // height + 1):
-            pos = [i * width, j * height]
-            tiles.append (pos)
+            pos = (i * width, j * height)
+            tiles.append(pos)
 
-    return tiles, image        
+    return tiles, image     
 
 def draw(window,background, bg_image, player):
     for tile in background:
@@ -83,9 +83,9 @@ def draw(window,background, bg_image, player):
 
 def main(window):
     clock = pygame.time.Clock()
-    background, bg_image = get_background("Sky.jpg")
+    background, bg_image = get_background("sky.jpg")
 
-    player = player(100,100, 50, 50)
+    player = Player(100,100, 50, 50)
 
     run = True
     while run:
@@ -94,6 +94,7 @@ def main(window):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+                break
 
     draw(window, background, bg_image, player)            
     
