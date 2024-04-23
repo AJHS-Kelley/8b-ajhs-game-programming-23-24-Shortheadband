@@ -3,9 +3,11 @@
 
 try: # The code in this block is ALWAYS executed
     myVariable = 1
-    print(myVariabl)
-    
-except NameError: # This code will run If there Is an error(exception)
+    print(myVariable)
+    mystring = "Five"
+    print(float(mystring))
+
+except ValueError: # This code will run If there Is an error(exception)
     print("There is an incorrect variable name in your code")
 except: 
     print("Something else went wrong")
