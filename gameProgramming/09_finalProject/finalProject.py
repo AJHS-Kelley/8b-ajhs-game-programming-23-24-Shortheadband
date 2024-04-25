@@ -2,6 +2,7 @@
 
 # Known Issue List:
 #-- Background dosen't fill screen
+#-- 3 New Errors(Crash code)
 
 # Discarded code:
 
@@ -61,7 +62,7 @@ def flip(sprites):
 
 def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     path = join("assets", dir1, dir2)
-    images = [f for f in listdir(path) if isfile(join(path, f))]
+    images = [f for f in listdir(path) if isfile(join(path, f))] #Error
 
     all_sprites = {}
 
@@ -83,9 +84,10 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     return all_sprites        
 
 
-class Player(pygame.sprite.Sprite):
+class Player(pygame.sprite.Sprite): #Error
     COLOR = (255,0, 9)
     GRAVITY = 1
+    SPRITES = load_sprite_sheets("MainCharaters", "MaskDude", 32, 32, True) # Error
     
     def __init__(self, x, y, width, height):
         self.rect = pygame.Rect(x, y, width, height)
@@ -113,13 +115,15 @@ class Player(pygame.sprite.Sprite):
             self.animation_count = 0
 
     def loop(self,fps):
-        self.y_vel += min(1, (self.fall_count / fps) * self.GRAVITY)
+        #self.y_vel += min(1, (self.fall_count / fps) * self.GRAVITY)
         self.move(self.x_vel, self.y_vel)
 
         self.fall_count += 1
 
     def draw(self, win):
-        pygame.draw.rect(win, self.COLOR, self.rect)    
+        pygame.draw.rect(win, self.COLOR, self.rect)   
+        self.sprite = self.SPRITES["idle_" + self.direction][0]
+        win.blit(self.sprite, (self.rect.x, self.rect.y)) 
 
 #known Issue -- Background dosen't fill screen
 def get_background(name):
