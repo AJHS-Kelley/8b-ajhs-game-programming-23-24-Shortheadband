@@ -3,6 +3,7 @@
 # Known Issue List:
 #-- Background dosen't fill screen
 #-- 3 New Errors(Crash code)
+#-- System Can't find assets
 
 # Discarded code:
 
