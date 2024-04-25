@@ -135,6 +135,8 @@ def main(window):
                 run = False
                 break
 
+        player.loop(FPS)    
+        handle_move(player)
         draw(window, background, bg_image, player)            
     
     pygame.quit()
