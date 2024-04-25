@@ -3,7 +3,6 @@
 # Known Issue List:
 #-- Background dosen't fill screen
 #-- 3 New Errors(Crash code)
-#-- System Can't find assets
 
 # Discarded code:
 
@@ -78,17 +77,18 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
             sprites.append(pygame.transform.scale2x(surface))
         
         if direction:
-            all_sprites[image.replace(".png," "") + "_right"] = sprites
+            all_sprites[image.replace(".png," "") + "_right"] = sprites # Error
             all_sprites[image.replace(".png," "") + "_left"] = flip(sprites)
         else:
             all_sprites[image.replace(".png", "")] = sprites
-    return all_sprites        
+    
+    return all_sprites 
 
 
 class Player(pygame.sprite.Sprite): #Error
     COLOR = (255,0, 9)
     GRAVITY = 1
-    SPRITES = load_sprite_sheets("MainCharaters", "MaskDude", 32, 32, True) # Error
+    SPRITES = load_sprite_sheets("MainCharacters", "MaskDude", 32, 32, True) 
     
     def __init__(self, x, y, width, height):
         self.rect = pygame.Rect(x, y, width, height)
