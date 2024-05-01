@@ -18,7 +18,11 @@
 #    else:
 #        print("This resoultion isn't available")
 #        retryRes
- 
+
+# Debugging Logs
+logFile = "geometryBlasterDebugLog.txt"
+logData = open(logFile, "w") # w = overwrite, a = Append, x = crash
+
 from ast import Return
 import sys, random, math, pygame
 from os import listdir
