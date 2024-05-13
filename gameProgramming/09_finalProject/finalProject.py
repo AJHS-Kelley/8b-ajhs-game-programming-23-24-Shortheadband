@@ -89,7 +89,7 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     
     return all_sprites 
 
-#-- Placeholder Square and Charter sprite both appear
+#-- Placeholder Square and Character sprite both appear
 class Player(pygame.sprite.Sprite):
     COLOR = (255,0, 9)
     GRAVITY = 1
@@ -164,7 +164,7 @@ def handle_move(player):
 
 def main(window):
     clock = pygame.time.Clock()
-    background, bg_image = get_background("Blue.png")
+    background, bg_image = get_background("Yellow.png")
 
     player = Player(100,100, 50, 50)
 
